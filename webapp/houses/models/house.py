@@ -9,6 +9,9 @@ class House(models.Model):
         verbose_name = 'House'
         verbose_name_plural = 'Houses'
 
+    def __str__(self):
+        return self.name
+
     name = models.CharField(max_length=140)
     price_per_night = models.PositiveIntegerField()
     description = models.TextField()
