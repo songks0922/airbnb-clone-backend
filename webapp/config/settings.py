@@ -40,6 +40,7 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'users',
+    'rooms',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -125,7 +126,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Auth
 AUTH_USER_MODEL = "users.User"
-
 
 JAZZMIN_SETTINGS = {
     'site_title': 'Airbnb-clone',
