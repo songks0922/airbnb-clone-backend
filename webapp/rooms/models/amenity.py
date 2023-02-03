@@ -1,8 +1,9 @@
 from django.db import models
 
+from common.models import CommonModel
 
-class Amenity(models.Model):
 
+class Amenity(CommonModel):
     """ Amenity Definition"""
 
     class Meta:
