@@ -4,4 +4,15 @@ from rooms.models import Amenity
 
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
-    pass
+
+    list_display = [
+        "name",
+        "description",
+        "created_at",
+        "updated_at",
+    ]
+
+    readonly_fields = [
+        "created_at",
+        "updated_at",
+    ]

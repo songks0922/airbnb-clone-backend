@@ -4,4 +4,22 @@ from rooms.models import Room
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
-    pass
+
+    list_display = [
+        "name",
+        "price",
+        "kind",
+        "owner",
+        "created_at",
+        "updated_at",
+    ]
+
+    list_filter = [
+        "country",
+        "city",
+        "price",
+        "rooms",
+        "toilets",
+        "pet_friendly",
+        "amenities",
+    ]
