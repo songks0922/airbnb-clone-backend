@@ -18,4 +18,4 @@ class Category(CommonModel):
     kind = models.CharField(max_length=15, choices=CategoryKindChoices.choices)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.kind}: {self.name}"
