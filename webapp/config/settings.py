@@ -44,6 +44,7 @@ PROJECT_APPS = [
     'common',
     'experiences',
     'categories',
+    'reviews',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
