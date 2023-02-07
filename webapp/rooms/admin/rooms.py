@@ -9,6 +9,7 @@ class RoomAdmin(admin.ModelAdmin):
         "price",
         "kind",
         "total_amenities",
+        "rating",
         "owner",
         "created_at",
         "updated_at",
@@ -23,6 +24,3 @@ class RoomAdmin(admin.ModelAdmin):
         "pet_friendly",
         "amenities",
     ]
-
-    # def total_amenities(self, room):
-    #     return room.amenities.count()
