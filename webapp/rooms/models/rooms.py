@@ -26,7 +26,11 @@ class Room(CommonModel):
     pet_friendly = models.BooleanField(default=True)
     kind = models.CharField(max_length=20, choices=RoomKindChoices.choices)
 
-    owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    owner = models.ForeignKey(
+        "users.User",
+        on_delete=models.CASCADE,
+        related_name="rooms"
+    )
     amenities = models.ManyToManyField("rooms.amenity")
 
     category = models.ForeignKey(
@@ -35,6 +39,9 @@ class Room(CommonModel):
         blank=True,
         on_delete=models.SET_NULL
     )
+
+    def total_amenities(self):
+        return self.amenities.count()
 
     def __str__(self) -> str:
         return self.name

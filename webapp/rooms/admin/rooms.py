@@ -4,11 +4,11 @@ from rooms.models import Room
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
-
     list_display = [
         "name",
         "price",
         "kind",
+        "total_amenities",
         "owner",
         "created_at",
         "updated_at",
@@ -23,3 +23,6 @@ class RoomAdmin(admin.ModelAdmin):
         "pet_friendly",
         "amenities",
     ]
+
+    # def total_amenities(self, room):
+    #     return room.amenities.count()
