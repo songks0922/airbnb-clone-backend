@@ -24,3 +24,9 @@ class RoomAdmin(admin.ModelAdmin):
         "pet_friendly",
         "amenities",
     ]
+
+    search_fields = (
+        "=owner__username",  # exact match
+        "^price",  # starts with
+        "name",  # contains
+    )
