@@ -2,16 +2,17 @@ from categories.models import Category
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from categories.serializers import CategorySerializer
+from rest_framework.views import APIView
 
 
-@api_view(["GET", "POST"])
-def categories_view(request):
-    if request.method == "GET":
+class Categories(APIView):
+
+    def get(self, request):
         all_categories = Category.objects.all()
         serializer = CategorySerializer(all_categories, many=True)
         return Response(serializer.data)
 
-    if request.method == "POST":
+    def post(self, request):
         serializer = CategorySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
