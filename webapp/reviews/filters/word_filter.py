@@ -14,5 +14,6 @@ class WordFilter(admin.SimpleListFilter):
 
     def queryset(self, request, reviews):
         word = self.value()
+        print(word)
         if word:
             return reviews.filter(payload__contains=word)
