@@ -28,6 +28,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
+
 DJANGO_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -51,7 +55,7 @@ PROJECT_APPS = [
     'direct_messages'
 ]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
