@@ -6,3 +6,4 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         exclude = ['created_at', 'updated_at']
+
